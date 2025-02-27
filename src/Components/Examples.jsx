@@ -24,8 +24,8 @@ export default function Examples(){
             </div>
     }
     return(
-        <Section id="examples" title="Examples">
-          <Tabs buttons={
+        <Section id="examples" title="Examples">{/*passing dynamic wrapper components  as props*/}
+          <Tabs ButtonContainer="menu" buttons={
             <>
               <TabButton isSelected={selectedTopic === 'components'} onClick={()=>handleSelect('components')}>Components</TabButton>
               <TabButton isSelected={selectedTopic === 'jsx'}onClick={()=>handleSelect('jsx')}>Jsx</TabButton>
