@@ -1,19 +1,19 @@
 import TabButton from "./TabButton.jsx";
 import { useState } from "react";
 import { EXAMPLES } from "./data.jsx";
+import Section from "./Section.jsx";
 export default function Examples(){
     let [selectedTopic,setSelectedTopic]=useState('');
     function handleSelect(SelectedButton){
       setSelectedTopic(SelectedButton);
     }
     return(
-        <section id="examples">
-            <h2>Examples</h2>
+        <Section id="examples" title="Examples">
             <menu> {/* default html element*used to create list of buttonss*/}
-              <TabButton isSelected={selectedTopic === 'components'} onSelect={()=>handleSelect('components')}>Components</TabButton>
-              <TabButton isSelected={selectedTopic === 'jsx'}onSelect={()=>handleSelect('jsx')}>Jsx</TabButton>
-              <TabButton  isSelected={selectedTopic === 'props'}onSelect={()=>handleSelect('props')}>Props</TabButton>
-              <TabButton  isSelected={selectedTopic === 'state'}onSelect={()=>handleSelect('state')}>State</TabButton>
+              <TabButton isSelected={selectedTopic === 'components'} onClick={()=>handleSelect('components')}>Components</TabButton>
+              <TabButton isSelected={selectedTopic === 'jsx'}onClick={()=>handleSelect('jsx')}>Jsx</TabButton>
+              <TabButton  isSelected={selectedTopic === 'props'}onClick={()=>handleSelect('props')}>Props</TabButton>
+              <TabButton  isSelected={selectedTopic === 'state'}onClick={()=>handleSelect('state')}>State</TabButton>
             </menu>
             {/*there are three ways one approch you cansee at the bottom
             other is using && ,other is element variable outside return*/}
@@ -30,6 +30,6 @@ export default function Examples(){
                 </pre>
             </div>
             )}
-          </section>
+          </Section>
     );
 }
